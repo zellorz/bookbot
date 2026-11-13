@@ -16,6 +16,8 @@ python main.py path/to/book.txt
 
 You can use any plain-text book, for example one from [Project Gutenberg](https://www.gutenberg.org/) such as *Frankenstein*. Put it in a `books/` folder (ignored by Git) or pass any path.
 
+On Linux/macOS, use `python3` instead of `python`.
+
 ## Example output
 
 ```
