@@ -1,24 +1,29 @@
+import sys
+
+
 def main():
-    path = "books/frankenstein.txt"
-    
+    if len(sys.argv) != 2:
+        print("Usage: python main.py <path_to_book>")
+        sys.exit(1)
+
+    path = sys.argv[1]
+
     text = get_text(path)
     words = count_words(text)
-
     characters = count_characters(text)
-    
-    print(f"--- Begin report of {path} ---")
 
+    print(f"--- Begin report of {path} ---")
     print(f"{len(words)} words found in the document")
-    
+
     for char in sorted(characters.keys()):
         print(f"The {char} character was found {characters[char]} times")
-    
-    print("--- End report ---")
 
+    print("--- End report ---")
 
 
 def count_words(text_string):
     return text_string.split()
+
 
 def count_characters(text_string):
     results = {}
@@ -31,9 +36,10 @@ def count_characters(text_string):
     return results
 
 
-
 def get_text(path):
     with open(path) as f:
         return f.read()
 
-main()
+
+if __name__ == "__main__":
+    main()
